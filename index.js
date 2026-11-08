@@ -110,28 +110,75 @@
 
 // function getAdultUsers(users) {
 // 	const adults
+// // }
+// function createCounter() {
+// 	let count = 0
+
+// 	return {
+// 		increment() {
+// 			count++
+// 		},
+// 		decrement() {
+// 			count--
+// 		},
+// 		getValue() {
+// 			return count
+// 		}
+// 	}
 // }
-function createCounter() {
-	let count = 0
+
+// const counter = createCounter()
+
+// counter.increment()
+// counter.increment()
+// counter.decrement()
+
+// console.log(counter.getValue());
+
+// function createLikes() {
+// 	let likes = 0
+
+// 	return {
+// 		addLike() {
+// 			likes++
+// 		},
+
+// 		getLikes() {
+// 			return likes
+// 		}
+// 	}
+// }
+// const post = createLikes()
+
+
+// post.addLike()
+// post.addLike()
+// post.addLike()
+
+// console.log(post.getLikes()) // ?
+
+function createBankAccount() {
+	let balance = 0
 
 	return {
-		increment() {
-			count++
+		deposit(amount) {
+			balance = balance + amount
 		},
-		decrement() {
-			count--
+		withdraw(amount) {
+			if (amount <= balance) {
+				balance = balance - amount
+			}
 		},
-		getValue() {
-			return count
+		getBalance() {
+			return balance
 		}
 	}
+
 }
 
-const counter = createCounter()
+const account = createBankAccount()
 
-counter.increment()
-counter.increment()
-counter.decrement()
+account.deposit(1000)
+account.withdraw(1500)
 
-console.log(counter.getValue());
-
+console.log(account.getBalance()) // 1000
